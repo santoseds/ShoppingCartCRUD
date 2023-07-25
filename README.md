@@ -8,8 +8,7 @@ json-server --watch db.json -p 3001
 
 go to http://localhost:3001/foods/
 
-In the React project directory, you can run: npm install
-In the React project directory, you can run: npm start
+In the React project directory, you can run: npm install and npm start
 
 # Getting Started with Create React App
 
