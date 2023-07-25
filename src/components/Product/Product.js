@@ -34,16 +34,14 @@ function cartReducer(cart, action){
       
     case 'add':
 
-      return [action.produto,...cart, ];
+      return [action.produto, ...cart ];
     case 'remove':
       let rem = [...cart];
-      //rem.reverse();
       const produtoIndex = rem.findIndex(item => item.name === action.produto.name);
       if(produtoIndex < 0) {
         return cart;
       }
       const update = [...cart];
-      //update.reverse();
       update.splice(produtoIndex, 1);
       return update;
     default:
