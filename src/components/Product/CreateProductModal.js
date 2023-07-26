@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 export function CreateProductModal() {
-  const {showProductModal, toggleProductModal,handleSubmitProductForm, typeProductForm} = useProductContext();
+  const {selectedProduct, showProductModal, toggleProductModal,handleSubmitProductForm, typeProductForm} = useProductContext();
   const { Formik } = formik;
 
   const schema = yup.object().shape({
@@ -30,9 +30,9 @@ export function CreateProductModal() {
         validationSchema={schema}
         onSubmit={handleSubmitProductForm}
         initialValues={{
-          name: "",
-          price: "",
-          emoji: ""
+          name: selectedProduct.name,
+          price: selectedProduct.price,
+          emoji: selectedProduct.emoji
         }}
         enableReinitialize = {true}
       >
